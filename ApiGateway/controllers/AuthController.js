@@ -19,7 +19,7 @@ class AuthController {
     checkAuth(req, res, next) {
         const checkAuth = AuthComponent('checkAuth');
         ensureHeaderAuth(req, res);
-        console.log(req.token);
+        // console.log(req.token);
         checkAuth(req.token)
             .then(response => {
                 const {id} = response;

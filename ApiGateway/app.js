@@ -54,10 +54,19 @@ const server = app.listen(port,'0.0.0.0', (error) => {
 
 });
 
+const server2 = app.listen(3001,'0.0.0.0', (error) => {
+    if (error)
+        throw error;
+    else
+        console.info(`sever running on port 3001`);
+
+});
+
 /*Graceful Shutdown our Http Server*/
 
 const gracefulShutdown = () => {
     server.close(() => {process.exit(0)})
+    server2.close(() => {process.exit(0)})
 };
 
 process
